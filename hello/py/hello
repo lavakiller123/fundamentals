@@ -11,6 +11,11 @@ def multi(message):
     while True:
         print(c.clear + c.multi(message))
 
+def nyan(message):
+    """print hello world in nyan"""
+    while True:
+        print(c.rc() + message, end= " ")
+
 if __name__ == '__main__':
     hello()
     import sys
@@ -19,13 +24,16 @@ if __name__ == '__main__':
     message = ""
     who = "world"
 
-    if len(sys.argv > 2):
+    if len(sys.argv) > 2:
         opition = sys.argv[1]
         who = sys.argv[2]
     elif len(sys.argv) == 2:
         if sys.argv[1].startswith("-"):
             option = sys.argv[1]
         else:
-            message = sys.argv[1]
+            who = sys.argv[1]
 
-    message = 
+    message = "Hello " + who
+
+    if option == "-n":
+
