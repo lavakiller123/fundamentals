@@ -2,9 +2,9 @@
 
 import skilstak.colors as c
 
-def hello():
+def hello(who):
     """Print Hello world!"""
-    print(c.clear + "Hello world!" + c.reset)
+    print(c.clear + "Hello " + who + c.reset)
 
 def multi(message):
     """print hello world in multicolored letters"""
@@ -17,7 +17,6 @@ def nyan(message):
         print(c.rc() + message, end= " ")
 
 if __name__ == '__main__':
-    hello()
     import sys
 
     option = ""
@@ -25,7 +24,7 @@ if __name__ == '__main__':
     who = "world"
 
     if len(sys.argv) > 2:
-        opition = sys.argv[1]
+        option = sys.argv[1]
         who = sys.argv[2]
     elif len(sys.argv) == 2:
         if sys.argv[1].startswith("-"):
@@ -36,4 +35,8 @@ if __name__ == '__main__':
     message = "Hello " + who
 
     if option == "-n":
-
+        nyan(message)
+    if option == "-m":
+        multi(message)
+    else:
+        hello(who)
