@@ -39,4 +39,5 @@ if __name__ == '__main__':
     if option == "-m":
         multi(message)
     else:
+        
         hello(who)
